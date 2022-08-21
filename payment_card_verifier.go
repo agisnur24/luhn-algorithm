@@ -7,23 +7,23 @@ func main() {
 }
 
 func CardVerifier(n []int) {
-	var dsd, od, sum, d int
+	var doublingSecondDigit, oddDigit, sum, digit int
 
 	for i := 0; i < len(n); i++ {
 		if i%2 == 0 {
-			d = n[len(n)-i-2] * 2
-			if d > 9 {
-				d -= 9
+			digit = n[len(n)-i-2] * 2
+			if digit > 9 {
+				digit -= 9
 			}
-			dsd = dsd + d
+			doublingSecondDigit += digit
 		} else {
-			od += n[i]
+			oddDigit += n[i]
 		}
 	}
-	fmt.Println("Sum doubling sec digit from right-left = ", dsd)
-	fmt.Println("Sum odd digit from right-left = ", od)
+	fmt.Println("Sum doubling second digit from right to left = ", doublingSecondDigit)
+	fmt.Println("Sum odd digit from right to left = ", oddDigit)
 
-	sum = dsd + od
+	sum = doublingSecondDigit + oddDigit
 
 	fmt.Println("Sum step 1 & step 2 = ", sum)
 
